@@ -4,32 +4,38 @@ from requests.auth import HTTPBasicAuth
 import json
 
 try:
-    with open('jenkins.json','r') as filedata:
+    with open(r'D:\Pipeline_satge\src\j.json','r') as filedata:
         filedata=json.load(filedata)
         for ele in filedata['data1']:
             status = requests.get(ele['url'], auth=HTTPBasicAuth(ele['username'],ele['pswd']))
+            
+            status1 = requests.get(ele['joburl'], auth=HTTPBasicAuth(ele['username'],ele['pswd']))
     
             status.raise_for_status() #raise exception for error code. 
-
+            
+            status1.raise_for_status()
+            
             # return json object.
             data=status.json()
+            
+            data1=status1.json()
 
-    # function to return Pipeline Info.
+
             def pipeline_info():
+                pipeline_name=data1['name']
                 build_no=data["name"]
                 build_status=data['status']
                 pipeline_startime=datetime.fromtimestamp(data['startTimeMillis']//1000).isoformat()
                 pipeline_endtime=datetime.fromtimestamp(data['endTimeMillis']//1000).isoformat()
-                pipeline_duration= data['durationMillis']
-                #pipeline_duration=(data['durationMillis']//1000)//60
+                pipeline_duration=data['durationMillis']
         
-                build_pipeline_data= { "Build_number": build_no,"build_status":build_status,"pipeline_startime":pipeline_startime," pipeline_endtime": pipeline_endtime,
+        
+                build_pipeline_data= {"pipeline_name":pipeline_name,"Build_number": build_no,"build_status":build_status,"pipeline_startime":pipeline_startime," pipeline_endtime": pipeline_endtime,
                                      "pipeline_duration":pipeline_duration
-                                     }
+                                    }
     
-                return  build_pipeline_data
+                return build_pipeline_data
 
-                #function to return  build stage Info.
             def stage_info():
                 stage_data = []
                 # Extarcting the data from json and saving it to dictonary.    
@@ -42,12 +48,13 @@ try:
                     status= key['status']
 
                     dta = {"Stage_Name":StageName, "StartTime": StartTime, "EndTime": EndTime, "DurationTime": DurationTime,"Stage_status":status }
-                    # appending all stages of pipeline to list.
+                # appending all stages of pipeline to list.
                     stage_data.append(dta)
                 return stage_data
     
 except requests.exceptions.HTTPError: # handle exception for invalid url.
-        print("Enter valid url..")
+    print("Enter valid url..")
+
 
     
     
