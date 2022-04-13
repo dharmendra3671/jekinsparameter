@@ -1,16 +1,18 @@
 {
     "data1":[
         {
-            "url":"http://localhost:8080/job/testpipline1/lastBuild/wfapi/",
+            "url": "http://localhost:8080/job/testpipline1/lastBuild/wfapi/",
+            "joburl": "http://localhost:8080/job/testpipline1/wfapi/",
             "username": "dharmendra",
             "pswd": "Kumar@123"
             
         },
         {
-            "url":"http://localhost:8080/job/testpipeline2/lastBuild/wfapi/",
+            "url": "http://localhost:8080/job/testpipeline2/lastBuild/wfapi/",
+            "joburl": "http://localhost:8080/job/testpipeline2/wfapi/",
             "username": "dharmendra",
             "pswd": "Kumar@123"
             
         }
     ]
-} 
+}
