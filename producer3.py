@@ -13,8 +13,6 @@ try:
         print(file_data)
         job_conf = sys.argv[1]
         jenkins_url = file_data["jenkins_cred"]['jenkins_url']
-        pipeline_name =file_data[job_conf]['pipeline_name']
-        # Ceredentials
         username = file_data["jenkins_cred"]['username']
         password = file_data["jenkins_cred"]['password']
         # getting json data for last job
