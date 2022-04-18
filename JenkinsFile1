@@ -5,7 +5,7 @@ pipeline {
      stage ('Kafka')
      {
         steps {
-            bat "producer3.py"
+            bat "producer3.py ${job_name}"
         }
     }
  }
