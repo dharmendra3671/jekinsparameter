@@ -21,6 +21,7 @@ try:
             
             # return json object.
         data=json_data.json()
+        print(data)
         
         def pipeline_info():
             build_no=data["name"]
