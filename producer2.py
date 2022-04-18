@@ -5,7 +5,6 @@ import json
 from kafka import KafkaProducer
 from json import dumps
 import time
-lst=[]
 
 try:
     with open('jenkins.json','r') as filedata:
