@@ -33,6 +33,7 @@ try:
             build_pipeline_data= {"pipeline":pipeline_name,"Build_number": build_no,"build_status":build_status,"pipeline_startime":pipeline_startime," pipeline_endtime": pipeline_endtime,
                                      "pipeline_duration":pipeline_duration
                                     }
+            print(build_pipeline_data)
             return build_pipeline_data
             
         def stage_info():
