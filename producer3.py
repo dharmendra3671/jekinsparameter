@@ -48,12 +48,10 @@ try:
                 status= key['status']
 
                 dta = {"Stage_Name":StageName, "StartTime": StartTime, "EndTime": EndTime, "DurationTime": DurationTime,"Stage_status":status }
+                print(dta)
                 # appending all stages of pipeline to list.
                 stage_data.append(dta)
                 return stage_data
-            print(pipeline_info())
-            for df in stage_info():
-                print(df)
                    
             KAFKA_URL = 'localhost:9092' # kafka broker
             KAFKA_TOPIC = 'jenkins-stage' # topic name
