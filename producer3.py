@@ -10,7 +10,6 @@ import sys
 try:
     with open(r'j.json','r') as filedata:
         file_data=json.load( filedata)
-        print(file_data)
         job_conf = sys.argv[1]
         jenkins_url = file_data["jenkins_cred"]['jenkins_url']
         username = file_data["jenkins_cred"]['username']
@@ -21,7 +20,7 @@ try:
             
             # return json object.
         data=json_data.json()
-        print(data)
+     
         
         def pipeline_info():
             build_no=data["name"]
@@ -52,6 +51,8 @@ try:
                 stage_data.append(dta)
                 return stage_data
             print(pipeline_info())
+            for df in stage_info():
+                print(df)
                    
             KAFKA_URL = 'localhost:9092' # kafka broker
             KAFKA_TOPIC = 'jenkins-stage' # topic name
