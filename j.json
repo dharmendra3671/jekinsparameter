@@ -1,0 +1,13 @@
+{
+    "jenkins_cred" : {
+                        "jenkins_url" :"http://localhost:8080",
+                        "username" : "dharmendra",
+                        "password" : "Kumar@123"
+                    },
+    "Test1" : {
+                "pipeline_name" : "tespipeline1"
+            },
+    "Test2" : {
+                "pipeline_name" : "tespipeline2"
+            }
+}
