@@ -8,7 +8,7 @@ import time
 import sys
 
 try:
-    with open(r'D:\Pipeline_satge\src\jenkins.json','r') as filedata:
+    with open(r'j.json','r') as filedata:
         file_data=json.load( filedata)
         print(file_data)
         job_conf = sys.argv[1]
