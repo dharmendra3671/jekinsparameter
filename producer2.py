@@ -64,7 +64,7 @@ try:
                 for df in stage_info():
                     producer.send(KAFKA_TOPIC, value = df)
                     producer.flush()
-                    time.sleep(10)# immediately available the buffer messages to send further.
+                    time.sleep(5)# immediately available the buffer messages to send further.
                     # print(df)
                 
             except Exception as e:
