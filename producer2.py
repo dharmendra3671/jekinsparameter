@@ -8,7 +8,7 @@ import time
 lst=[]
 
 try:
-    with open('j.json','r') as filedata:
+    with open('jenkins.json','r') as filedata:
         file_data=json.load( filedata)
         for ele in file_data['data1']:
             status = requests.get(ele['url'], auth=HTTPBasicAuth(ele['username'],ele['pswd']))
