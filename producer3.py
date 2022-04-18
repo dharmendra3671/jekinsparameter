@@ -51,6 +51,7 @@ try:
                 # appending all stages of pipeline to list.
                 stage_data.append(dta)
                 return stage_data
+            print(pipeline_info())
                    
             KAFKA_URL = 'localhost:9092' # kafka broker
             KAFKA_TOPIC = 'jenkins-stage' # topic name
